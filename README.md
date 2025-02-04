@@ -1,30 +1,47 @@
-## audio-slicer
-[![NPM](https://img.shields.io/badge/Available%20On-NPM-lightgrey.svg?logo=npm&logoColor=DA291A&labelColor=white&style=flat-square)](https://www.npmjs.com/package/audio-slicer)
+# Audio Slicer with Path Support for ffmpeg
 
-A Node.js module to split audio files into segments. This module accepts audio data buffers as input and returns an array of Buffers representing the sliced audio segments.
+This is a fork from <https://github.com/AliAryanTech/audio-slicer/>.
+All this fork do is adding the ability to set the path of ffmpeg.
 
-### Installation
-Before using the `audio-slicer` module, make sure to have `ffmpeg` installed on your system. You can install `audio-slicer` using npm or yarn:
+Credits to AliAryanTech for the functionalities and the original README.
+
+## Installation
+
+Before using the `audio-slicer-with-path` module, you must install the package `@ffmpeg-installer/ffmpeg` installed in your app. You can install `audio-slicer-with-path` using npm or yarn:
 
 ```sh
-npm install audio-slicer
-```
-or
-```sh
-yarn add audio-slicer
+npm install audio-slicer-with-path
 ```
 
-### Usage:
-The `audio-slicer` module provides two functions:
+```javascript
+ dotenv = require('dotenv');
+dotenv.config();
+
+```
+
+To set the path of ffmpeg, you can use the following code in your project:
+
+```javascript
+import dotenv from 'dotenv';
+const ffmpeg = require('@ffmpeg-installer/ffmpeg');
+dotenv.config();
+process.env.FFMPEG_PATH = ffmpeg.path;
+```
+
+### Usage
+
+The `audio-slicer-with-path` module provides two functions:
 
 #### 1. `audioToSlice(buffer, seconds, video)`
+
 - `buffer` (required): The audio data buffer you want to slice. This should be a Buffer containing the audio content you want to split.
 - `seconds` (required): The duration of each segment in seconds.
 - `video` (optional, default is false): A boolean indicating whether the media is video (true) or audio (false).
 
 Here's an example usage:
+
 ```js
-const { audioToSlice } = require('audio-slicer')
+const { audioToSlice } = require('audio-slicer-with-path')
 const { readFile } = require('fs-extra')
 
 (async () => {
@@ -45,11 +62,13 @@ const { readFile } = require('fs-extra')
 ```
 
 #### 2. `audioMerge(audios)`
+
 - `audios` (required): An array of audio buffers to merge.
 
 Here's an example usage:
+
 ```js
-const { audioMerge } = require('audio-slicer')
+const { audioMerge } = require('audio-slicer-with-path')
 const { readFile } = require('fs-extra')
 
 (async () => {
@@ -73,8 +92,7 @@ const { readFile } = require('fs-extra')
 })()
 ```
 
-### Contribution
-Contributions to the `audio-slicer` module are welcome! If you find any issues or have suggestions for improvement, please open an issue or submit a pull request on the [GitHub repository](https://github.com/AliAryanTech/audio-slicer).
-
 ### Credits
+
 The `audio-slicer` module is created and maintained by [AliAryanTech](https://github.com/AliAryanTech).
+The `audio-slicer-with-path` module is a fork of `audio-slicer` with the addition of setting the path of ffmpeg.
