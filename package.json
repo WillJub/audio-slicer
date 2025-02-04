@@ -1,7 +1,7 @@
 {
-  "name": "audio-slicer",
+  "name": "audio-slicer-with-path",
   "version": "1.8.0",
-  "description": "A Node.js module to split audio files into segments. This module accepts audio data buffers as input and returns an array of Buffers representing the sliced audio segments.",
+  "description": "This is a fork of audio-slicer that adds the ability to used the specify the path to the ffmpeg binary from a dotenv variable.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -14,10 +14,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AliAryanTech/audio-slicer.git"
+    "url": "git+https://github.com/WillJub/audio-slicer.git"
   },
-  "homepage": "https://github.com/AliAryanTech/audio-slicer",
-  "author": "AliAryanTech",
+  "homepage": "https://github.com/WillJub/audio-slicer",
+  "author": "AliAryanTech and WillJub",
   "license": "MIT",
   "dependencies": {
     "child_process": "^1.0.2",
