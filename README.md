@@ -7,7 +7,7 @@ Credits to AliAryanTech for the functionalities and the original README.
 
 ## Installation
 
-Before using the `audio-slicer-with-path` module, you must install the package `@ffmpeg-installer/ffmpeg` installed in your app. You can install `audio-slicer-with-path` using npm or yarn:
+Before using the `audio-slicer-with-path` module, you must have the package `@ffmpeg-installer/ffmpeg` installed in your app. You can install `audio-slicer-with-path` using npm or yarn:
 
 ```sh
 npm install audio-slicer-with-path
